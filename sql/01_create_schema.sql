@@ -8,6 +8,8 @@ Create DATABASE indian_ecommerce;
 -- --------------------------------------
 -- 2. Create Schema as ecommerce (That stores datasets)
 -- --------------------------------------
+
+DROP SCHEMA public CASCADE;
 Create SCHEMA IF NOT EXISTS ecommerce;
 SET search_path TO ecommerce,public;
 
@@ -15,7 +17,8 @@ SET search_path TO ecommerce,public;
 --3. Drop Tables if they already exists (for clean re-runs)
 -- ---------------------------------------------------------
 
-DROP TABLE IF EXISTS shipments CASCADE;
+DROP TABLE IF EXISTS order_items CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
 Drop Table IF EXISTS customers CASCADE;
 
@@ -183,3 +186,8 @@ CREATE INDEX idx_reviews_rating             ON customer_reviews(rating);
 
 
 SELECT 'Schema created successfully in database: indian_ecommerce' AS status;
+
+
+SELECT current_database(), current_user;
+
+SHOW search_path;
