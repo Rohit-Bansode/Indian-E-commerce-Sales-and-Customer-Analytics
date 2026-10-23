@@ -9,7 +9,6 @@ Create DATABASE indian_ecommerce;
 -- 2. Create Schema as ecommerce (That stores datasets)
 -- --------------------------------------
 
-DROP SCHEMA public CASCADE;
 Create SCHEMA IF NOT EXISTS ecommerce;
 SET search_path TO ecommerce,public;
 
@@ -17,6 +16,10 @@ SET search_path TO ecommerce,public;
 --3. Drop Tables if they already exists (for clean re-runs)
 -- ---------------------------------------------------------
 
+DROP TABLE IF EXISTS customer_reviews CASCADE;
+DROP TABLE IF EXISTS returns CASCADE;
+DROP TABLE IF EXISTS shipments CASCADE;
+DROP TABLE IF EXISTS payments CASCADE;
 DROP TABLE IF EXISTS order_items CASCADE;
 DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
@@ -42,8 +45,8 @@ Create table customers (
     preferred_payment_method    VARCHAR(30) NOT NULL,
     total_orders                INTEGER NOT NULL DEFAULT 0,
     total_spend                 NUMERIC(12,2) NOT NULL DEFAULT 0,
-    average_order_value         INTEGER NOT NULL DEFAULT 0,
     last_order_date             DATE,
+    average_order_value         NUMERIC NOT NULL DEFAULT 0,
     customer_status             VARCHAR(50) NOT NULL,
     loyalty_tier                VARCHAR(50) NOT NULL
 );
@@ -190,4 +193,3 @@ SELECT 'Schema created successfully in database: indian_ecommerce' AS status;
 
 SELECT current_database(), current_user;
 
-SHOW search_path;
