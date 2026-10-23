@@ -38,6 +38,7 @@ Create table customers (
     preferred_device            VARCHAR(30),
     preferred_payment_method    VARCHAR(30) NOT NULL,
     total_orders                INTEGER NOT NULL DEFAULT 0,
+    total_spend                 NUMERIC(12,2) NOT NULL DEFAULT 0,
     average_order_value         INTEGER NOT NULL DEFAULT 0,
     last_order_date             DATE,
     customer_status             VARCHAR(50) NOT NULL,
