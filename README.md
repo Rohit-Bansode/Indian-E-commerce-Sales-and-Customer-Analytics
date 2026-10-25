@@ -122,6 +122,19 @@ Tables used:
 
 ---
 
+## Power BI Dashboard: 
+
+### Page 1: Executive Overview
+![Executive Overview](power_bi/screenshots/1_executive_overview.png)
+### Page 2: Sales Performance
+![Sales Performance](power_bi/screenshots/2_sales_performance.png)
+### Page 3: Customer Analytics (RFM)
+![Customer Analytics (RFM)](power_bi/screenshots/3_customer_Analytics_(rfm).png)
+### Page 4: Returns & Delivery
+![Returns & Delivery](power_bi/screenshots/4_returns_and_delivery.png)
+### Page 5: Payments & Reviews
+![Payments & Reviews](power_bi/screenshots/5_payments_and_reviews.png)
+---
 ## How to Setup & Run:
 
   **1. Clone the repository:**
